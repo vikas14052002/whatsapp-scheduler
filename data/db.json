@@ -1,0 +1,184 @@
+{
+  "businesses": [
+    {
+      "id": "939c7b0f-b392-4ceb-938c-b7d8e0090893",
+      "name": "Glow Beauty Salon",
+      "type": "salon",
+      "phone": "+919876543210",
+      "email": "demo@glowsalon.in",
+      "address": "123 Main Street, Mumbai",
+      "whatsapp_number": "+919876543210",
+      "timezone": "Asia/Kolkata",
+      "is_active": true,
+      "created_at": "2026-05-07T16:35:01.230Z"
+    }
+  ],
+  "services": [
+    {
+      "id": "61677e12-4a4a-43dc-87fc-224789d477eb",
+      "business_id": "939c7b0f-b392-4ceb-938c-b7d8e0090893",
+      "name": "Haircut",
+      "description": "Standard haircut",
+      "duration_minutes": 30,
+      "price": 300,
+      "deposit_amount": 50,
+      "is_active": true,
+      "created_at": "2026-05-07T16:35:01.230Z"
+    },
+    {
+      "id": "b513108b-cb03-4542-9f4a-75dea477cafb",
+      "business_id": "939c7b0f-b392-4ceb-938c-b7d8e0090893",
+      "name": "Facial",
+      "description": "Deep cleansing facial",
+      "duration_minutes": 60,
+      "price": 800,
+      "deposit_amount": 100,
+      "is_active": true,
+      "created_at": "2026-05-07T16:35:01.230Z"
+    },
+    {
+      "id": "f862c6a8-df30-46a3-8101-e276481af599",
+      "business_id": "939c7b0f-b392-4ceb-938c-b7d8e0090893",
+      "name": "Hair Coloring",
+      "description": "Full hair color",
+      "duration_minutes": 120,
+      "price": 1500,
+      "deposit_amount": 200,
+      "is_active": true,
+      "created_at": "2026-05-07T16:35:01.230Z"
+    },
+    {
+      "id": "29b67da6-bd26-4bbe-adc7-5d1f4d8d4918",
+      "business_id": "939c7b0f-b392-4ceb-938c-b7d8e0090893",
+      "name": "Manicure",
+      "description": "Nail care and polish",
+      "duration_minutes": 45,
+      "price": 400,
+      "deposit_amount": 50,
+      "is_active": true,
+      "created_at": "2026-05-07T16:35:01.230Z"
+    }
+  ],
+  "appointments": [
+    {
+      "id": "cab8adc6-e8cf-46ec-8cc5-06adbf362e79",
+      "business_id": "939c7b0f-b392-4ceb-938c-b7d8e0090893",
+      "service_id": "61677e12-4a4a-43dc-87fc-224789d477eb",
+      "service_name": "Haircut",
+      "staff_id": null,
+      "patient_name": "Priya Sharma",
+      "patient_phone": "+919988776655",
+      "appointment_date": "2026-05-07",
+      "start_time": "10:00",
+      "end_time": "10:30",
+      "status": "confirmed",
+      "notes": "",
+      "deposit_paid": true,
+      "deposit_amount": 50,
+      "source": "whatsapp",
+      "created_at": "2026-05-07T16:35:01.230Z"
+    },
+    {
+      "id": "0b460bc4-9229-48ef-9dda-3c2256fb5f98",
+      "business_id": "939c7b0f-b392-4ceb-938c-b7d8e0090893",
+      "service_id": "b513108b-cb03-4542-9f4a-75dea477cafb",
+      "service_name": "Facial",
+      "staff_id": null,
+      "patient_name": "Ananya Gupta",
+      "patient_phone": "+919977665544",
+      "appointment_date": "2026-05-07",
+      "start_time": "11:00",
+      "end_time": "12:00",
+      "status": "confirmed",
+      "notes": "First time customer",
+      "deposit_paid": false,
+      "deposit_amount": 100,
+      "source": "manual",
+      "created_at": "2026-05-07T16:35:01.230Z"
+    },
+    {
+      "id": "57f85b67-2f83-4e32-b3d1-7192689bf37d",
+      "business_id": "939c7b0f-b392-4ceb-938c-b7d8e0090893",
+      "service_id": "61677e12-4a4a-43dc-87fc-224789d477eb",
+      "service_name": "Haircut",
+      "staff_id": null,
+      "patient_name": "Rahul Mehta",
+      "patient_phone": "+919966554433",
+      "appointment_date": "2026-05-07",
+      "start_time": "14:00",
+      "end_time": "14:30",
+      "status": "cancelled",
+      "notes": "Cancelled via WhatsApp",
+      "deposit_paid": false,
+      "deposit_amount": 50,
+      "source": "whatsapp",
+      "created_at": "2026-05-07T16:35:01.230Z"
+    },
+    {
+      "id": "765d324b-7310-4cf6-a309-4ece499348a9",
+      "business_id": "939c7b0f-b392-4ceb-938c-b7d8e0090893",
+      "service_id": "f862c6a8-df30-46a3-8101-e276481af599",
+      "service_name": "Hair Coloring",
+      "staff_id": null,
+      "patient_name": "Sneha Patel",
+      "patient_phone": "+919955443322",
+      "appointment_date": "2026-05-08",
+      "start_time": "10:00",
+      "end_time": "12:00",
+      "status": "confirmed",
+      "notes": "",
+      "deposit_paid": true,
+      "deposit_amount": 200,
+      "source": "web",
+      "created_at": "2026-05-07T16:35:01.230Z"
+    }
+  ],
+  "patients": [
+    {
+      "id": "0d4add8c-4f38-43a2-898c-5d6bce1a5d2a",
+      "business_id": "939c7b0f-b392-4ceb-938c-b7d8e0090893",
+      "name": "Priya Sharma",
+      "phone": "+919988776655",
+      "email": "",
+      "notes": "Regular customer",
+      "visit_count": 5,
+      "last_visit": "2026-05-07",
+      "created_at": "2026-05-07T16:35:01.230Z"
+    },
+    {
+      "id": "8da860ad-6a7c-473a-a022-85201504662c",
+      "business_id": "939c7b0f-b392-4ceb-938c-b7d8e0090893",
+      "name": "Ananya Gupta",
+      "phone": "+919977665544",
+      "email": "",
+      "notes": "First visit",
+      "visit_count": 1,
+      "last_visit": "2026-05-07",
+      "created_at": "2026-05-07T16:35:01.230Z"
+    },
+    {
+      "id": "90ad169d-91e6-47b8-b4e1-458303e20053",
+      "business_id": "939c7b0f-b392-4ceb-938c-b7d8e0090893",
+      "name": "Rahul Mehta",
+      "phone": "+919966554433",
+      "email": "",
+      "notes": "Cancelled last time",
+      "visit_count": 2,
+      "last_visit": "2026-05-07",
+      "created_at": "2026-05-07T16:35:01.230Z"
+    },
+    {
+      "id": "05585fd0-785b-4b36-9478-2e9b84404d76",
+      "business_id": "939c7b0f-b392-4ceb-938c-b7d8e0090893",
+      "name": "Sneha Patel",
+      "phone": "+919955443322",
+      "email": "",
+      "notes": "",
+      "visit_count": 3,
+      "last_visit": "2026-05-07",
+      "created_at": "2026-05-07T16:35:01.230Z"
+    }
+  ],
+  "staff": [],
+  "reminder_logs": []
+}
