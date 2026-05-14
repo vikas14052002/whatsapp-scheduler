@@ -114,7 +114,7 @@ export default function AppointmentList({ appointments, showActions = true, onSt
               </div>
               <p className="text-sm text-deep-ink/50 font-body">{appt.service_name}</p>
               <div className="flex items-center gap-4 mt-2 text-sm text-deep-ink/40 font-body flex-wrap">
-                <span className="inline-flex items-center gap-1">📅 {new Date(appt.appointment_date).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}</span>
+                <span className="inline-flex items-center gap-1">📅 {new Date(appt.appointment_date + 'T00:00:00').toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}</span>
                 <span className="inline-flex items-center gap-1">⏰ {appt.start_time}</span>
                 {appt.deposit_amount > 0 && (
                   <span className={`inline-flex items-center gap-1 font-medium transition-all duration-200 ${appt.deposit_paid ? 'text-green-600' : 'text-orange-600'}`}>

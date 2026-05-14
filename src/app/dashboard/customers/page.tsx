@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Plus, Phone } from 'lucide-react';
+import { Plus, Phone, Users } from 'lucide-react';
 import Dialog from '@/components/ui/Dialog';
 import Tooltip from '@/components/ui/Tooltip';
 import { Customer } from '@/types';
@@ -43,8 +43,9 @@ export default function PatientsPage() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-64">
+      <div className="flex flex-col items-center justify-center h-64 gap-3">
         <div className="animate-spin rounded-full h-10 w-10 border-2 border-saffron-glow border-t-transparent" />
+        <p className="text-sm text-deep-ink/40 dark:text-white/40 font-body">Loading customers...</p>
       </div>
     );
   }
@@ -65,28 +66,28 @@ export default function PatientsPage() {
       <div className="dashboard-card overflow-hidden">
         <table className="w-full">
           <thead>
-            <tr className="border-b border-deep-ink/8">
-              <th className="text-left py-3.5 px-5 text-sm font-semibold text-deep-ink/40 font-body">Name</th>
-              <th className="text-left py-3.5 px-5 text-sm font-semibold text-deep-ink/40 font-body">Phone</th>
-              <th className="text-left py-3.5 px-5 text-sm font-semibold text-deep-ink/40 font-body">Visits</th>
-              <th className="text-left py-3.5 px-5 text-sm font-semibold text-deep-ink/40 font-body">Last Visit</th>
-              <th className="text-left py-3.5 px-5 text-sm font-semibold text-deep-ink/40 font-body">Actions</th>
+            <tr className="border-b border-deep-ink/8 dark:border-white/8">
+              <th className="text-left py-3.5 px-5 text-sm font-semibold text-deep-ink/40 dark:text-white/40 font-body">Name</th>
+              <th className="text-left py-3.5 px-5 text-sm font-semibold text-deep-ink/40 dark:text-white/40 font-body">Phone</th>
+              <th className="text-left py-3.5 px-5 text-sm font-semibold text-deep-ink/40 dark:text-white/40 font-body">Visits</th>
+              <th className="text-left py-3.5 px-5 text-sm font-semibold text-deep-ink/40 dark:text-white/40 font-body">Last Visit</th>
+              <th className="text-left py-3.5 px-5 text-sm font-semibold text-deep-ink/40 dark:text-white/40 font-body">Actions</th>
             </tr>
           </thead>
           <tbody>
             {customers.map((customer) => (
-              <tr key={customer.id} className="border-b border-deep-ink/5 transition-all duration-200 hover:bg-sage-whisper/30">
+              <tr key={customer.id} className="border-b border-deep-ink/5 dark:border-white/5 transition-all duration-200 hover:bg-sage-whisper/30 dark:hover:bg-white/5">
                 <td className="py-3.5 px-5">
                   <div className="flex items-center gap-3">
                     <div className="w-9 h-9 rounded-full bg-saffron-glow/10 flex items-center justify-center text-saffron-glow font-display font-bold text-sm transition-transform duration-200 hover:scale-110">
                       {customer.name.charAt(0)}
                     </div>
-                    <span className="font-medium text-deep-ink font-body text-sm">{customer.name}</span>
+                    <span className="font-medium text-deep-ink dark:text-white font-body text-sm">{customer.name}</span>
                   </div>
                 </td>
-                <td className="py-3.5 px-5 text-sm text-deep-ink/50 font-body">{customer.phone}</td>
-                <td className="py-3.5 px-5 text-sm text-deep-ink/50 font-body">{customer.visit_count}</td>
-                <td className="py-3.5 px-5 text-sm text-deep-ink/50 font-body">
+                <td className="py-3.5 px-5 text-sm text-deep-ink/50 dark:text-white/50 font-body">{customer.phone}</td>
+                <td className="py-3.5 px-5 text-sm text-deep-ink/50 dark:text-white/50 font-body">{customer.visit_count}</td>
+                <td className="py-3.5 px-5 text-sm text-deep-ink/50 dark:text-white/50 font-body">
                   {customer.last_visit ? new Date(customer.last_visit).toLocaleDateString('en-IN') : '-'}
                 </td>
                 <td className="py-3.5 px-5">
@@ -106,14 +107,23 @@ export default function PatientsPage() {
           </tbody>
         </table>
         {customers.length === 0 && (
-          <div className="text-center py-12 text-deep-ink/30 font-body">No customers yet.</div>
+          <div className="text-center py-16">
+            <div className="w-16 h-16 rounded-2xl bg-saffron-glow/10 flex items-center justify-center mx-auto mb-4">
+              <Users size={28} className="text-saffron-glow/60" />
+            </div>
+            <h3 className="font-semibold text-deep-ink dark:text-white font-headline mb-2">No customers yet</h3>
+            <p className="text-sm text-deep-ink/40 dark:text-white/40 font-body mb-5">Customers appear here after they book via WhatsApp or when you add them manually.</p>
+            <button onClick={() => setShowAddModal(true)} className="btn-primary text-sm px-6 py-2.5 mx-auto">
+              <Plus size={16} className="mr-2 inline" /> Add First Customer
+            </button>
+          </div>
         )}
       </div>
 
       {/* Add Customer Modal */}
       <Dialog open={showAddModal} onClose={() => setShowAddModal(false)} className="max-w-md w-full p-6 sm:p-8">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-lg font-semibold text-deep-ink font-headline">Add Customer</h2>
+          <h2 className="text-lg font-semibold text-deep-ink dark:text-white font-headline">Add Customer</h2>
         </div>
         <form onSubmit={handleAdd} className="space-y-4">
           <div>

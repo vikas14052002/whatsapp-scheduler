@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { setSession, clearSession } from '@/lib/auth';
+import { setSession, clearSession, requireAuth } from '@/lib/auth';
 import { getBusinessByEmail, createBusiness } from '@/lib/db-hybrid';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -48,4 +48,15 @@ export async function POST(request: NextRequest) {
   }
 
   return NextResponse.json({ error: 'Invalid action' }, { status: 400 });
+}
+
+export async function GET() {
+  try {
+    const session = requireAuth();
+    const { getBusinessById } = await import('@/lib/db-hybrid');
+    const business = await getBusinessById(session.business_id);
+    return NextResponse.json({ business });
+  } catch {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
 }

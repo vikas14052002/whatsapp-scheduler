@@ -71,7 +71,7 @@ export default function Sidebar() {
             const isActive = pathname === item.href;
             const Icon = item.icon;
             return (
-              <Link key={item.href} href={item.href} className="relative block">
+              <Link key={item.href} href={item.href} className="relative block" aria-current={isActive ? 'page' : undefined}>
                 {isActive && (
                   <motion.div
                     layoutId="active-pill"

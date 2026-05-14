@@ -306,7 +306,7 @@ export async function executeStep(
 
     case 'send_reminder': {
       const hours = step.config.hours_before as number || 24;
-      await sendWhatsAppMessage({
+      await send({
         to: execution.customer_phone,
         body: `⏰ *Reminder*\n\nHi ${data.name || 'there'},\n\nYour appointment at ${businessName} is in ${hours} hours.\n\n📋 ${data.service_name || 'Your service'}\n📅 ${data.date || 'Scheduled date'}\n⏰ ${data.time || 'Scheduled time'}\n\nReply *CONFIRM* to confirm or *CANCEL* if you can't make it.`,
       });

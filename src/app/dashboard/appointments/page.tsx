@@ -40,8 +40,9 @@ export default function AppointmentsPage() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-64">
+      <div className="flex flex-col items-center justify-center h-64 gap-3">
         <div className="animate-spin rounded-full h-10 w-10 border-2 border-saffron-glow border-t-transparent" />
+        <p className="text-sm text-deep-ink/40 dark:text-white/40 font-body">Loading appointments...</p>
       </div>
     );
   }

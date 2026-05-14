@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Plus, Trash2, Clock, IndianRupee } from 'lucide-react';
+import { Plus, Trash2, Clock, IndianRupee, Scissors } from 'lucide-react';
 import Dialog from '@/components/ui/Dialog';
 import ConfirmDialog from '@/components/ui/ConfirmDialog';
 import Tooltip from '@/components/ui/Tooltip';
@@ -68,8 +68,9 @@ export default function ServicesPage() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-64">
+      <div className="flex flex-col items-center justify-center h-64 gap-3">
         <div className="animate-spin rounded-full h-10 w-10 border-2 border-saffron-glow border-t-transparent" />
+        <p className="text-sm text-deep-ink/40 dark:text-white/40 font-body">Loading services...</p>
       </div>
     );
   }
@@ -120,6 +121,19 @@ export default function ServicesPage() {
           </div>
         ))}
       </div>
+
+      {services.length === 0 && (
+        <div className="dashboard-card text-center py-16">
+          <div className="w-16 h-16 rounded-2xl bg-saffron-glow/10 flex items-center justify-center mx-auto mb-4">
+            <Scissors size={28} className="text-saffron-glow/60" />
+          </div>
+          <h3 className="font-semibold text-deep-ink dark:text-white font-headline mb-2">No services yet</h3>
+          <p className="text-sm text-deep-ink/40 dark:text-white/40 font-body mb-5">Add the services your customers can book via WhatsApp.</p>
+          <button onClick={() => setShowAddModal(true)} className="btn-primary text-sm px-6 py-2.5 mx-auto">
+            <Plus size={16} className="mr-2 inline" /> Add First Service
+          </button>
+        </div>
+      )}
 
       {/* Add Service Modal */}
       <Dialog open={showAddModal} onClose={() => setShowAddModal(false)} className="max-w-md w-full p-6 sm:p-8">

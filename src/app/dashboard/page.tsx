@@ -79,7 +79,9 @@ export default function DashboardPage() {
         total_appointments_week: weekAppts.length,
         total_customers: all.length > 0 ? new Set(all.map((a: Appointment) => a.patient_phone)).size : 0,
         no_show_rate: totalFinished > 0 ? Math.round((noShows / totalFinished) * 100) : 0,
-        upcoming_appointments: all.filter((a: Appointment) => a.appointment_date >= today && a.status === 'confirmed').slice(0, 5),
+        upcoming_appointments: all
+          .filter((a: Appointment) => a.appointment_date === today)
+          .sort((a: Appointment, b: Appointment) => a.start_time.localeCompare(b.start_time)),
         recent_customers: [],
       });
     } catch { router.push('/login'); }
@@ -125,8 +127,9 @@ export default function DashboardPage() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-64">
+      <div className="flex flex-col items-center justify-center h-64 gap-3">
         <div className="animate-spin rounded-full h-10 w-10 border-2 border-saffron-glow border-t-transparent" />
+        <p className="text-sm text-deep-ink/40 dark:text-white/40 font-body">Loading dashboard...</p>
       </div>
     );
   }
@@ -301,7 +304,7 @@ export default function DashboardPage() {
         ) : (
           <div className="text-center py-10 text-deep-ink/30 dark:text-white/30 font-body">
             <CheckCircle2 size={32} className="mx-auto mb-2 opacity-40" />
-            <p>No appointments today. Time to relax!</p>
+            <p className="text-sm">No appointments scheduled for today.</p>
           </div>
         )}
       </motion.div>

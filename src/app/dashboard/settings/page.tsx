@@ -14,14 +14,10 @@ export default function SettingsPage() {
 
   async function fetchBusiness() {
     try {
-      const res = await fetch('/api/appointments');
+      const res = await fetch('/api/auth');
       if (res.status === 401) { router.push('/login'); return; }
-      setBusiness({
-        id: 'demo', name: 'Glow Beauty Salon', type: 'salon',
-        phone: '+919876543210', email: 'demo@glowsalon.in',
-        address: '123 Main Street, Mumbai', whatsapp_number: '+919876543210',
-        timezone: 'Asia/Kolkata', is_active: true, created_at: new Date().toISOString(),
-      });
+      const data = await res.json();
+      if (data.business) setBusiness(data.business);
     } catch { router.push('/login'); }
   }
 
@@ -34,7 +30,12 @@ export default function SettingsPage() {
 
   const inputClass = "w-full px-4 py-3 border border-deep-ink/15 rounded-xl bg-white text-deep-ink placeholder:text-deep-ink/30 transition-all duration-200 hover:border-deep-ink/25 focus:outline-none focus:ring-2 focus:ring-saffron-glow/25 focus:border-saffron-glow focus:shadow-[0_0_0_4px_rgba(232,93,4,0.08)]";
 
-  if (!business) return null;
+  if (!business) return (
+    <div className="flex flex-col items-center justify-center h-64 gap-3">
+      <div className="animate-spin rounded-full h-10 w-10 border-2 border-saffron-glow border-t-transparent" />
+      <p className="text-sm text-deep-ink/40 dark:text-white/40 font-body">Loading settings...</p>
+    </div>
+  );
 
   return (
     <div className="animate-fade-in">
