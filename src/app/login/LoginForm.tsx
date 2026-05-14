@@ -188,8 +188,10 @@ export default function LoginForm() {
                   />
                 </div>
                 <div className="pt-2 space-y-3">
-                  <button type="submit" disabled={loading} className="btn-primary w-full">
-                    {loading ? <Loader2 size={18} className="animate-spin" /> : <><span>Sign In</span><ArrowRight size={16} /></>}
+                  <button type="submit" disabled={loading} className="btn-primary w-full inline-flex items-center justify-center gap-2 min-h-[48px]">
+                    {loading && <Loader2 size={16} className="animate-spin" />}
+                    <span className={loading ? 'opacity-80' : ''}>Sign In</span>
+                    {!loading && <ArrowRight size={16} />}
                   </button>
                   <button type="button" onClick={handleDemoLogin} disabled={loading} className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border border-deep-ink/10 text-deep-ink font-body font-medium text-sm transition-all duration-200 hover:bg-sage-whisper hover:border-deep-ink/20 hover:shadow-md hover:-translate-y-0.5 active:translate-y-0">
                     <Sparkles size={16} className="text-saffron-glow" />
@@ -227,8 +229,10 @@ export default function LoginForm() {
                   <input type="email" value={regEmail} onChange={(e) => setRegEmail(e.target.value)} onFocus={() => setFocusedField('reg-email')} onBlur={() => setFocusedField(null)} className={`${inputBase} ${inputNormal} ${inputFocus}`} placeholder="you@business.com" required />
                 </div>
                 <div className="pt-2">
-                  <button type="submit" disabled={loading} className="btn-primary w-full">
-                    {loading ? <Loader2 size={18} className="animate-spin" /> : <><span>Create Account</span><ArrowRight size={16} /></>}
+                  <button type="submit" disabled={loading} className="btn-primary w-full inline-flex items-center justify-center gap-2 min-h-[48px]">
+                    {loading && <Loader2 size={16} className="animate-spin" />}
+                    <span className={loading ? 'opacity-80' : ''}>Create Account</span>
+                    {!loading && <ArrowRight size={16} />}
                   </button>
                 </div>
               </form>

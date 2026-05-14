@@ -52,7 +52,7 @@ export interface Appointment {
   created_at: string;
 }
 
-export interface Patient {
+export interface Customer {
   id: string;
   business_id: string;
   name: string;
@@ -63,6 +63,9 @@ export interface Patient {
   last_visit: string | null;
   created_at: string;
 }
+
+/** @deprecated Use Customer instead */
+export type Patient = Customer;
 
 export interface ReminderLog {
   id: string;
@@ -75,10 +78,10 @@ export interface ReminderLog {
 export interface DashboardStats {
   total_appointments_today: number;
   total_appointments_week: number;
-  total_patients: number;
+  total_customers: number;
   no_show_rate: number;
   upcoming_appointments: Appointment[];
-  recent_patients: Patient[];
+  recent_customers: Customer[];
 }
 
 export interface UserSession {
@@ -86,3 +89,19 @@ export interface UserSession {
   email: string;
   name: string;
 }
+
+// Re-export config types for convenience
+export type { BusinessCategory, BusinessTypeConfig } from '@/lib/config';
+export { BUSINESS_TYPES, BUSINESS_TYPE_MAP, LABELS, APP_CONFIG } from '@/lib/config';
+
+// Workflow types
+export type {
+  Workflow,
+  WorkflowStep,
+  WorkflowStepType,
+  WorkflowExecution,
+  WorkflowLog,
+  WorkflowTemplate,
+  BotPersonality,
+} from '@/lib/workflow/types';
+export { WORKFLOW_TEMPLATES } from '@/lib/workflow/types';

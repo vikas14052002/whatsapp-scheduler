@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, Suspense } from 'react';
 import { useRouter } from 'next/navigation';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -45,8 +45,10 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative min-h-[100dvh] flex items-center bg-deep-ink">
-      <ParticleField />
+    <section ref={sectionRef} className="relative min-h-[100dvh] flex items-center bg-deep-ink pt-20">
+      <Suspense fallback={null}>
+        <ParticleField />
+      </Suspense>
 
       {/* Background orbs */}
       <div ref={orbRef} className="absolute top-1/4 -left-32 w-[600px] h-[600px] rounded-full opacity-20 will-change-transform pointer-events-none"

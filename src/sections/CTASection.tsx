@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, Suspense } from 'react';
 import { useRouter } from 'next/navigation';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -58,7 +58,9 @@ export default function CTASection() {
           style={{ background: 'radial-gradient(circle, rgba(45,27,78,0.4) 0%, transparent 70%)', filter: 'blur(100px)' }} />
       </div>
 
-      <FloatingGeometry />
+      <Suspense fallback={null}>
+        <FloatingGeometry />
+      </Suspense>
 
       <Container className="relative z-10">
         <div className="cta-content text-center max-w-3xl mx-auto">

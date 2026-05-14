@@ -1,14 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { setSession, clearSession } from '@/lib/auth';
-import { getDb, saveDb } from '@/lib/db';
+import { getBusinessByEmail, createBusiness } from '@/lib/db-hybrid';
 import { v4 as uuidv4 } from 'uuid';
 
 export async function POST(request: NextRequest) {
   const { action, email, password, name, businessName, businessType, phone } = await request.json();
 
   if (action === 'login') {
-    const db = getDb();
-    const business = db.businesses.find(b => b.email === email);
+    const business = await getBusinessByEmail(email);
     if (!business) {
       return NextResponse.json({ error: 'Invalid credentials' }, { status: 401 });
     }
@@ -18,8 +17,8 @@ export async function POST(request: NextRequest) {
   }
 
   if (action === 'register') {
-    const db = getDb();
-    if (db.businesses.find(b => b.email === email)) {
+    const existing = await getBusinessByEmail(email);
+    if (existing) {
       return NextResponse.json({ error: 'Email already registered' }, { status: 400 });
     }
 
@@ -27,7 +26,7 @@ export async function POST(request: NextRequest) {
     const business = {
       id: businessId,
       name: businessName,
-      type: businessType || 'salon',
+      type: (businessType || 'salon') as 'salon' | 'clinic' | 'tuition' | 'consultant' | 'spa' | 'other',
       phone: phone || '',
       email,
       address: '',
@@ -37,8 +36,7 @@ export async function POST(request: NextRequest) {
       created_at: new Date().toISOString(),
     };
 
-    db.businesses.push(business);
-    saveDb(db);
+    await createBusiness(business);
 
     setSession({ business_id: business.id, email: business.email, name: business.name });
     return NextResponse.json({ success: true, business });

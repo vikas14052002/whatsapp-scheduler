@@ -1,5 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getDb, saveDb, getUpcomingAppointments } from '@/lib/db';
+import {
+  getAppointmentsByBusiness,
+  getServicesByBusiness,
+  createAppointment,
+  updateAppointmentStatus,
+  getCustomerByPhone,
+  createCustomer,
+  updateCustomer,
+  getBusinessById,
+  getUpcomingAppointments as getUpcomingAppointmentsHybrid,
+} from '@/lib/db-hybrid';
 import { requireAuth } from '@/lib/auth';
 import { v4 as uuidv4 } from 'uuid';
 import { sendWhatsAppMessage, generateBookingConfirmationMessage } from '@/lib/whatsapp';
@@ -7,7 +17,7 @@ import { sendWhatsAppMessage, generateBookingConfirmationMessage } from '@/lib/w
 export async function GET() {
   try {
     const session = requireAuth();
-    const appointments = getUpcomingAppointments(session.business_id, 50);
+    const appointments = await getUpcomingAppointmentsHybrid(session.business_id, 50);
     return NextResponse.json({ appointments });
   } catch {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
@@ -20,8 +30,8 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const { service_id, patient_name, patient_phone, appointment_date, start_time, notes, deposit_amount } = body;
 
-    const db = getDb();
-    const service = db.services.find(s => s.id === service_id && s.business_id === session.business_id);
+    const services = await getServicesByBusiness(session.business_id);
+    const service = services.find(s => s.id === service_id);
     if (!service) {
       return NextResponse.json({ error: 'Service not found' }, { status: 404 });
     }
@@ -38,6 +48,7 @@ export async function POST(request: NextRequest) {
       service_id,
       service_name: service.name,
       staff_id: null,
+      staff_name: undefined,
       patient_name,
       patient_phone,
       appointment_date,
@@ -51,15 +62,18 @@ export async function POST(request: NextRequest) {
       created_at: new Date().toISOString(),
     };
 
-    db.appointments.push(appointment);
+    await createAppointment(appointment);
 
-    // Upsert patient
-    const existingPatient = db.patients.find(p => p.phone === patient_phone && p.business_id === session.business_id);
-    if (existingPatient) {
-      existingPatient.visit_count += 1;
-      existingPatient.last_visit = appointment_date;
+    // Upsert customer
+    const existingCustomer = await getCustomerByPhone(patient_phone, session.business_id);
+    if (existingCustomer) {
+      await updateCustomer({
+        id: existingCustomer.id,
+        visit_count: (existingCustomer.visit_count || 0) + 1,
+        last_visit: appointment_date,
+      });
     } else {
-      db.patients.push({
+      await createCustomer({
         id: uuidv4(),
         business_id: session.business_id,
         name: patient_name,
@@ -68,14 +82,11 @@ export async function POST(request: NextRequest) {
         notes: '',
         visit_count: 1,
         last_visit: appointment_date,
-        created_at: new Date().toISOString(),
-      });
+      } as any);
     }
 
-    saveDb(db);
-
     // Send WhatsApp confirmation
-    const business = db.businesses.find(b => b.id === session.business_id);
+    const business = await getBusinessById(session.business_id);
     if (business) {
       await sendWhatsAppMessage({
         to: patient_phone,
@@ -104,16 +115,8 @@ export async function PATCH(request: NextRequest) {
     const session = requireAuth();
     const { id, status } = await request.json();
 
-    const db = getDb();
-    const appointment = db.appointments.find(a => a.id === id && a.business_id === session.business_id);
-    if (!appointment) {
-      return NextResponse.json({ error: 'Appointment not found' }, { status: 404 });
-    }
-
-    appointment.status = status;
-    saveDb(db);
-
-    return NextResponse.json({ success: true, appointment });
+    await updateAppointmentStatus(id, session.business_id, status);
+    return NextResponse.json({ success: true });
   } catch {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }

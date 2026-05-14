@@ -5,23 +5,23 @@ import { useRouter } from 'next/navigation';
 import { Plus, Phone } from 'lucide-react';
 import Dialog from '@/components/ui/Dialog';
 import Tooltip from '@/components/ui/Tooltip';
-import { Patient } from '@/types';
+import { Customer } from '@/types';
 
 export default function PatientsPage() {
   const router = useRouter();
-  const [patients, setPatients] = useState<Patient[]>([]);
+  const [customers, setCustomers] = useState<Customer[]>([]);
   const [loading, setLoading] = useState(true);
   const [showAddModal, setShowAddModal] = useState(false);
   const [formData, setFormData] = useState({ name: '', phone: '', email: '', notes: '' });
 
-  useEffect(() => { fetchPatients(); }, []);
+  useEffect(() => { fetchCustomers(); }, []);
 
-  async function fetchPatients() {
+  async function fetchCustomers() {
     try {
       const res = await fetch('/api/patients');
       if (res.status === 401) { router.push('/login'); return; }
       const data = await res.json();
-      setPatients(data.patients || []);
+      setCustomers(data.customers || []);
     } catch { router.push('/login'); }
     finally { setLoading(false); }
   }
@@ -35,7 +35,7 @@ export default function PatientsPage() {
     if (res.ok) {
       setShowAddModal(false);
       setFormData({ name: '', phone: '', email: '', notes: '' });
-      fetchPatients();
+      fetchCustomers();
     }
   }
 
@@ -74,25 +74,25 @@ export default function PatientsPage() {
             </tr>
           </thead>
           <tbody>
-            {patients.map((patient) => (
-              <tr key={patient.id} className="border-b border-deep-ink/5 transition-all duration-200 hover:bg-sage-whisper/30">
+            {customers.map((customer) => (
+              <tr key={customer.id} className="border-b border-deep-ink/5 transition-all duration-200 hover:bg-sage-whisper/30">
                 <td className="py-3.5 px-5">
                   <div className="flex items-center gap-3">
                     <div className="w-9 h-9 rounded-full bg-saffron-glow/10 flex items-center justify-center text-saffron-glow font-display font-bold text-sm transition-transform duration-200 hover:scale-110">
-                      {patient.name.charAt(0)}
+                      {customer.name.charAt(0)}
                     </div>
-                    <span className="font-medium text-deep-ink font-body text-sm">{patient.name}</span>
+                    <span className="font-medium text-deep-ink font-body text-sm">{customer.name}</span>
                   </div>
                 </td>
-                <td className="py-3.5 px-5 text-sm text-deep-ink/50 font-body">{patient.phone}</td>
-                <td className="py-3.5 px-5 text-sm text-deep-ink/50 font-body">{patient.visit_count}</td>
+                <td className="py-3.5 px-5 text-sm text-deep-ink/50 font-body">{customer.phone}</td>
+                <td className="py-3.5 px-5 text-sm text-deep-ink/50 font-body">{customer.visit_count}</td>
                 <td className="py-3.5 px-5 text-sm text-deep-ink/50 font-body">
-                  {patient.last_visit ? new Date(patient.last_visit).toLocaleDateString('en-IN') : '-'}
+                  {customer.last_visit ? new Date(customer.last_visit).toLocaleDateString('en-IN') : '-'}
                 </td>
                 <td className="py-3.5 px-5">
                   <Tooltip text="Message on WhatsApp">
                     <a
-                      href={`https://wa.me/${patient.phone.replace(/\D/g, '')}`}
+                      href={`https://wa.me/${customer.phone.replace(/\D/g, '')}`}
                       target="_blank" rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 text-sm font-medium text-whatsapp hover:text-whatsapp-dark transition-colors duration-200 hover:underline"
                     >
@@ -105,7 +105,7 @@ export default function PatientsPage() {
             ))}
           </tbody>
         </table>
-        {patients.length === 0 && (
+        {customers.length === 0 && (
           <div className="text-center py-12 text-deep-ink/30 font-body">No customers yet.</div>
         )}
       </div>

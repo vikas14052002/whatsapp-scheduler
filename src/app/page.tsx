@@ -2,7 +2,7 @@
 
 import { useLenis } from '@/hooks/useLenis';
 import ScrollProgress from '@/components/ScrollProgress';
-import PromoBar from '@/components/PromoBar';
+
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/sections/HeroSection';
 import SocialProofSection from '@/sections/SocialProofSection';
@@ -20,7 +20,6 @@ export default function LandingPage() {
   return (
     <main className="relative">
       <ScrollProgress />
-      <PromoBar />
       <Navbar />
       <HeroSection />
       <SocialProofSection />

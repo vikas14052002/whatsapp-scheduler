@@ -47,17 +47,16 @@ export default function ConfirmDialog({
           <button
             onClick={onConfirm}
             disabled={isLoading}
-            className={`flex-1 inline-flex items-center justify-center px-5 py-3 rounded-xl font-body font-semibold text-sm text-white transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 ${
+            className={`flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-body font-semibold text-sm text-white transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 min-w-[100px] ${
               confirmVariant === 'danger'
                 ? 'bg-red-500 hover:bg-red-600 shadow-lg shadow-red-500/25'
                 : 'btn-primary'
             }`}
           >
-            {isLoading ? (
+            {isLoading && (
               <span className="inline-block w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-            ) : (
-              confirmText
             )}
+            <span className={isLoading ? 'opacity-90' : ''}>{confirmText}</span>
           </button>
         </div>
       </div>

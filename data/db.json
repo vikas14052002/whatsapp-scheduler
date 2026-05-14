@@ -1,7 +1,7 @@
 {
   "businesses": [
     {
-      "id": "939c7b0f-b392-4ceb-938c-b7d8e0090893",
+      "id": "fa071488-8349-4288-a5d9-c732d9a8bccd",
       "name": "Glow Beauty Salon",
       "type": "salon",
       "phone": "+919876543210",
@@ -10,65 +10,65 @@
       "whatsapp_number": "+919876543210",
       "timezone": "Asia/Kolkata",
       "is_active": true,
-      "created_at": "2026-05-07T16:35:01.230Z"
+      "created_at": "2026-05-09T08:00:45.205Z"
     }
   ],
   "services": [
     {
-      "id": "61677e12-4a4a-43dc-87fc-224789d477eb",
-      "business_id": "939c7b0f-b392-4ceb-938c-b7d8e0090893",
+      "id": "4acfab31-a3dd-4c76-bfa8-f3f16cda29ee",
+      "business_id": "fa071488-8349-4288-a5d9-c732d9a8bccd",
       "name": "Haircut",
       "description": "Standard haircut",
       "duration_minutes": 30,
       "price": 300,
       "deposit_amount": 50,
       "is_active": true,
-      "created_at": "2026-05-07T16:35:01.230Z"
+      "created_at": "2026-05-09T08:00:45.205Z"
     },
     {
-      "id": "b513108b-cb03-4542-9f4a-75dea477cafb",
-      "business_id": "939c7b0f-b392-4ceb-938c-b7d8e0090893",
+      "id": "4a514596-8cdd-476f-b2d6-c34a0d2e167c",
+      "business_id": "fa071488-8349-4288-a5d9-c732d9a8bccd",
       "name": "Facial",
       "description": "Deep cleansing facial",
       "duration_minutes": 60,
       "price": 800,
       "deposit_amount": 100,
       "is_active": true,
-      "created_at": "2026-05-07T16:35:01.230Z"
+      "created_at": "2026-05-09T08:00:45.205Z"
     },
     {
-      "id": "f862c6a8-df30-46a3-8101-e276481af599",
-      "business_id": "939c7b0f-b392-4ceb-938c-b7d8e0090893",
+      "id": "6b873249-036a-4ad6-8d68-5cc962439f0a",
+      "business_id": "fa071488-8349-4288-a5d9-c732d9a8bccd",
       "name": "Hair Coloring",
       "description": "Full hair color",
       "duration_minutes": 120,
       "price": 1500,
       "deposit_amount": 200,
       "is_active": true,
-      "created_at": "2026-05-07T16:35:01.230Z"
+      "created_at": "2026-05-09T08:00:45.205Z"
     },
     {
-      "id": "29b67da6-bd26-4bbe-adc7-5d1f4d8d4918",
-      "business_id": "939c7b0f-b392-4ceb-938c-b7d8e0090893",
+      "id": "4a7c7e4c-e4ca-471a-aa98-d2cadd0bc385",
+      "business_id": "fa071488-8349-4288-a5d9-c732d9a8bccd",
       "name": "Manicure",
       "description": "Nail care and polish",
       "duration_minutes": 45,
       "price": 400,
       "deposit_amount": 50,
       "is_active": true,
-      "created_at": "2026-05-07T16:35:01.230Z"
+      "created_at": "2026-05-09T08:00:45.205Z"
     }
   ],
   "appointments": [
     {
-      "id": "cab8adc6-e8cf-46ec-8cc5-06adbf362e79",
-      "business_id": "939c7b0f-b392-4ceb-938c-b7d8e0090893",
-      "service_id": "61677e12-4a4a-43dc-87fc-224789d477eb",
+      "id": "c8914eea-4bbe-42ca-b723-35541afb544f",
+      "business_id": "fa071488-8349-4288-a5d9-c732d9a8bccd",
+      "service_id": "4acfab31-a3dd-4c76-bfa8-f3f16cda29ee",
       "service_name": "Haircut",
       "staff_id": null,
       "patient_name": "Priya Sharma",
       "patient_phone": "+919988776655",
-      "appointment_date": "2026-05-07",
+      "appointment_date": "2026-05-09",
       "start_time": "10:00",
       "end_time": "10:30",
       "status": "confirmed",
@@ -76,17 +76,17 @@
       "deposit_paid": true,
       "deposit_amount": 50,
       "source": "whatsapp",
-      "created_at": "2026-05-07T16:35:01.230Z"
+      "created_at": "2026-05-09T08:00:45.205Z"
     },
     {
-      "id": "0b460bc4-9229-48ef-9dda-3c2256fb5f98",
-      "business_id": "939c7b0f-b392-4ceb-938c-b7d8e0090893",
-      "service_id": "b513108b-cb03-4542-9f4a-75dea477cafb",
+      "id": "234dd813-2e51-4c7b-8102-cbf5997bffb2",
+      "business_id": "fa071488-8349-4288-a5d9-c732d9a8bccd",
+      "service_id": "4a514596-8cdd-476f-b2d6-c34a0d2e167c",
       "service_name": "Facial",
       "staff_id": null,
       "patient_name": "Ananya Gupta",
       "patient_phone": "+919977665544",
-      "appointment_date": "2026-05-07",
+      "appointment_date": "2026-05-09",
       "start_time": "11:00",
       "end_time": "12:00",
       "status": "confirmed",
@@ -94,17 +94,17 @@
       "deposit_paid": false,
       "deposit_amount": 100,
       "source": "manual",
-      "created_at": "2026-05-07T16:35:01.230Z"
+      "created_at": "2026-05-09T08:00:45.205Z"
     },
     {
-      "id": "57f85b67-2f83-4e32-b3d1-7192689bf37d",
-      "business_id": "939c7b0f-b392-4ceb-938c-b7d8e0090893",
-      "service_id": "61677e12-4a4a-43dc-87fc-224789d477eb",
+      "id": "ff5da720-6852-4760-bbfb-91988fd1ee21",
+      "business_id": "fa071488-8349-4288-a5d9-c732d9a8bccd",
+      "service_id": "4acfab31-a3dd-4c76-bfa8-f3f16cda29ee",
       "service_name": "Haircut",
       "staff_id": null,
       "patient_name": "Rahul Mehta",
       "patient_phone": "+919966554433",
-      "appointment_date": "2026-05-07",
+      "appointment_date": "2026-05-09",
       "start_time": "14:00",
       "end_time": "14:30",
       "status": "cancelled",
@@ -112,17 +112,35 @@
       "deposit_paid": false,
       "deposit_amount": 50,
       "source": "whatsapp",
-      "created_at": "2026-05-07T16:35:01.230Z"
+      "created_at": "2026-05-09T08:00:45.205Z"
     },
     {
-      "id": "765d324b-7310-4cf6-a309-4ece499348a9",
-      "business_id": "939c7b0f-b392-4ceb-938c-b7d8e0090893",
-      "service_id": "f862c6a8-df30-46a3-8101-e276481af599",
+      "id": "0149ab51-9478-45dc-93b8-f414414fb791",
+      "business_id": "fa071488-8349-4288-a5d9-c732d9a8bccd",
+      "service_id": "4a7c7e4c-e4ca-471a-aa98-d2cadd0bc385",
+      "service_name": "Manicure",
+      "staff_id": null,
+      "patient_name": "Meera Iyer",
+      "patient_phone": "+919944332211",
+      "appointment_date": "2026-05-09",
+      "start_time": "16:00",
+      "end_time": "16:45",
+      "status": "completed",
+      "notes": "Happy with service",
+      "deposit_paid": true,
+      "deposit_amount": 50,
+      "source": "manual",
+      "created_at": "2026-05-09T08:00:45.205Z"
+    },
+    {
+      "id": "0828ff5c-8a25-44cb-bf17-8482c81e8b52",
+      "business_id": "fa071488-8349-4288-a5d9-c732d9a8bccd",
+      "service_id": "6b873249-036a-4ad6-8d68-5cc962439f0a",
       "service_name": "Hair Coloring",
       "staff_id": null,
       "patient_name": "Sneha Patel",
       "patient_phone": "+919955443322",
-      "appointment_date": "2026-05-08",
+      "appointment_date": "2026-05-10",
       "start_time": "10:00",
       "end_time": "12:00",
       "status": "confirmed",
@@ -130,55 +148,461 @@
       "deposit_paid": true,
       "deposit_amount": 200,
       "source": "web",
-      "created_at": "2026-05-07T16:35:01.230Z"
-    }
-  ],
-  "patients": [
-    {
-      "id": "0d4add8c-4f38-43a2-898c-5d6bce1a5d2a",
-      "business_id": "939c7b0f-b392-4ceb-938c-b7d8e0090893",
-      "name": "Priya Sharma",
-      "phone": "+919988776655",
-      "email": "",
-      "notes": "Regular customer",
-      "visit_count": 5,
-      "last_visit": "2026-05-07",
-      "created_at": "2026-05-07T16:35:01.230Z"
+      "created_at": "2026-05-09T08:00:45.205Z"
     },
     {
-      "id": "8da860ad-6a7c-473a-a022-85201504662c",
-      "business_id": "939c7b0f-b392-4ceb-938c-b7d8e0090893",
+      "id": "46facaa3-bc49-451d-beda-b094ecba3f79",
+      "business_id": "fa071488-8349-4288-a5d9-c732d9a8bccd",
+      "service_id": "4acfab31-a3dd-4c76-bfa8-f3f16cda29ee",
+      "service_name": "Haircut",
+      "staff_id": null,
+      "patient_name": "Arjun Nair",
+      "patient_phone": "+919933221100",
+      "appointment_date": "2026-05-10",
+      "start_time": "15:00",
+      "end_time": "15:30",
+      "status": "confirmed",
+      "notes": "Wants layers",
+      "deposit_paid": false,
+      "deposit_amount": 50,
+      "source": "whatsapp",
+      "created_at": "2026-05-09T08:00:45.205Z"
+    },
+    {
+      "id": "ef81ba39-dd34-457d-a496-c19e3c4eac3d",
+      "business_id": "fa071488-8349-4288-a5d9-c732d9a8bccd",
+      "service_id": "4a514596-8cdd-476f-b2d6-c34a0d2e167c",
+      "service_name": "Facial",
+      "staff_id": null,
+      "patient_name": "Kavita Reddy",
+      "patient_phone": "+919922110099",
+      "appointment_date": "2026-05-08",
+      "start_time": "11:00",
+      "end_time": "12:00",
+      "status": "completed",
+      "notes": "",
+      "deposit_paid": true,
+      "deposit_amount": 100,
+      "source": "manual",
+      "created_at": "2026-05-09T08:00:45.205Z"
+    },
+    {
+      "id": "fcb8b3b7-d951-4a14-8c64-d0a769d3c4e0",
+      "business_id": "fa071488-8349-4288-a5d9-c732d9a8bccd",
+      "service_id": "4acfab31-a3dd-4c76-bfa8-f3f16cda29ee",
+      "service_name": "Haircut",
+      "staff_id": null,
+      "patient_name": "Deepak Joshi",
+      "patient_phone": "+919911009988",
+      "appointment_date": "2026-05-07",
+      "start_time": "10:00",
+      "end_time": "10:30",
+      "status": "no_show",
+      "notes": "Did not show up",
+      "deposit_paid": false,
+      "deposit_amount": 50,
+      "source": "whatsapp",
+      "created_at": "2026-05-09T08:00:45.206Z"
+    },
+    {
+      "id": "5d13790f-75cd-4227-82d9-c5e44f4071ed",
+      "business_id": "fa071488-8349-4288-a5d9-c732d9a8bccd",
+      "service_id": "4a7c7e4c-e4ca-471a-aa98-d2cadd0bc385",
+      "service_name": "Manicure",
+      "staff_id": null,
+      "patient_name": "Fatima Khan",
+      "patient_phone": "+919900998877",
+      "appointment_date": "2026-05-07",
+      "start_time": "14:00",
+      "end_time": "14:45",
+      "status": "completed",
+      "notes": "Loved the nail art",
+      "deposit_paid": true,
+      "deposit_amount": 50,
+      "source": "web",
+      "created_at": "2026-05-09T08:00:45.206Z"
+    },
+    {
+      "id": "e1747965-bf87-4c4c-9856-5e57f61ddfd0",
+      "business_id": "fa071488-8349-4288-a5d9-c732d9a8bccd",
+      "service_id": "4acfab31-a3dd-4c76-bfa8-f3f16cda29ee",
+      "service_name": "Haircut",
+      "staff_id": null,
+      "patient_name": "Priya sharma",
+      "patient_phone": "+919999995136",
+      "appointment_date": "2026-05-09",
+      "start_time": "10:NaN",
+      "end_time": "10:30",
+      "status": "confirmed",
+      "notes": "Booked via WhatsApp workflow",
+      "deposit_paid": false,
+      "deposit_amount": 50,
+      "source": "whatsapp"
+    },
+    {
+      "id": "5d5b41d0-cefc-4b0f-91a5-4a3bb9ad0fe8",
+      "business_id": "fa071488-8349-4288-a5d9-c732d9a8bccd",
+      "service_id": "4a514596-8cdd-476f-b2d6-c34a0d2e167c",
+      "service_name": "Facial",
+      "staff_id": null,
+      "patient_name": "Ananya gupta",
+      "patient_phone": "+919999993221",
+      "appointment_date": "2026-05-11",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "status": "confirmed",
+      "notes": "Booked via WhatsApp workflow",
+      "deposit_paid": false,
+      "deposit_amount": 100,
+      "source": "whatsapp"
+    }
+  ],
+  "customers": [
+    {
+      "id": "f83a9916-340c-4d1e-a3e5-7cc069bd53af",
+      "business_id": "fa071488-8349-4288-a5d9-c732d9a8bccd",
+      "name": "Priya Sharma",
+      "phone": "+919988776655",
+      "email": "priya@email.com",
+      "notes": "Regular customer, prefers morning slots",
+      "visit_count": 5,
+      "last_visit": "2026-05-09",
+      "created_at": "2026-05-09T08:00:45.206Z"
+    },
+    {
+      "id": "0ea7be1b-d1bf-4815-8d4b-aa87a78db740",
+      "business_id": "fa071488-8349-4288-a5d9-c732d9a8bccd",
       "name": "Ananya Gupta",
       "phone": "+919977665544",
       "email": "",
-      "notes": "First visit",
+      "notes": "First visit, referred by Priya",
       "visit_count": 1,
-      "last_visit": "2026-05-07",
-      "created_at": "2026-05-07T16:35:01.230Z"
+      "last_visit": "2026-05-09",
+      "created_at": "2026-05-09T08:00:45.206Z"
     },
     {
-      "id": "90ad169d-91e6-47b8-b4e1-458303e20053",
-      "business_id": "939c7b0f-b392-4ceb-938c-b7d8e0090893",
+      "id": "c7e6babf-d59d-4fd8-a9f9-69981efcabdf",
+      "business_id": "fa071488-8349-4288-a5d9-c732d9a8bccd",
       "name": "Rahul Mehta",
       "phone": "+919966554433",
-      "email": "",
-      "notes": "Cancelled last time",
+      "email": "rahul@email.com",
+      "notes": "Cancelled last time, follow up needed",
       "visit_count": 2,
-      "last_visit": "2026-05-07",
-      "created_at": "2026-05-07T16:35:01.230Z"
+      "last_visit": "2026-05-09",
+      "created_at": "2026-05-09T08:00:45.206Z"
     },
     {
-      "id": "05585fd0-785b-4b36-9478-2e9b84404d76",
-      "business_id": "939c7b0f-b392-4ceb-938c-b7d8e0090893",
+      "id": "0686345f-40f2-44c9-b731-0cd4f78d4866",
+      "business_id": "fa071488-8349-4288-a5d9-c732d9a8bccd",
       "name": "Sneha Patel",
       "phone": "+919955443322",
       "email": "",
-      "notes": "",
+      "notes": "Loyal customer, books monthly",
       "visit_count": 3,
+      "last_visit": "2026-05-10",
+      "created_at": "2026-05-09T08:00:45.206Z"
+    },
+    {
+      "id": "094b068c-9dee-4da0-a17a-6d06f389d854",
+      "business_id": "fa071488-8349-4288-a5d9-c732d9a8bccd",
+      "name": "Meera Iyer",
+      "phone": "+919944332211",
+      "email": "meera@email.com",
+      "notes": "VIP customer",
+      "visit_count": 8,
+      "last_visit": "2026-05-09",
+      "created_at": "2026-05-09T08:00:45.206Z"
+    },
+    {
+      "id": "de77a1f6-3f30-466c-8b07-392bb4e06156",
+      "business_id": "fa071488-8349-4288-a5d9-c732d9a8bccd",
+      "name": "Arjun Nair",
+      "phone": "+919933221100",
+      "email": "",
+      "notes": "New customer from Instagram",
+      "visit_count": 1,
+      "last_visit": "2026-05-10",
+      "created_at": "2026-05-09T08:00:45.206Z"
+    },
+    {
+      "id": "19a05297-2ab5-44aa-9378-a3de521d5af5",
+      "business_id": "fa071488-8349-4288-a5d9-c732d9a8bccd",
+      "name": "Kavita Reddy",
+      "phone": "+919922110099",
+      "email": "",
+      "notes": "Regular, books facials every 2 weeks",
+      "visit_count": 4,
+      "last_visit": "2026-05-08",
+      "created_at": "2026-05-09T08:00:45.206Z"
+    },
+    {
+      "id": "62e1dbac-65c8-4601-b0f4-599863122736",
+      "business_id": "fa071488-8349-4288-a5d9-c732d9a8bccd",
+      "name": "Deepak Joshi",
+      "phone": "+919911009988",
+      "email": "",
+      "notes": "No-show history, requires confirmation",
+      "visit_count": 2,
       "last_visit": "2026-05-07",
-      "created_at": "2026-05-07T16:35:01.230Z"
+      "created_at": "2026-05-09T08:00:45.206Z"
+    },
+    {
+      "id": "7fcf0c18-a3ee-436a-80cc-93c214eefa3c",
+      "business_id": "fa071488-8349-4288-a5d9-c732d9a8bccd",
+      "name": "Fatima Khan",
+      "phone": "+919900998877",
+      "email": "fatima@email.com",
+      "notes": "Loves manicures, always on time",
+      "visit_count": 6,
+      "last_visit": "2026-05-07",
+      "created_at": "2026-05-09T08:00:45.206Z"
+    },
+    {
+      "id": "af47a958-957f-42c0-a74b-7ff94621da88",
+      "business_id": "fa071488-8349-4288-a5d9-c732d9a8bccd",
+      "name": "Priya sharma",
+      "phone": "+919999995136",
+      "email": "",
+      "notes": "",
+      "visit_count": 1,
+      "last_visit": "2026-05-09",
+      "created_at": "2026-05-09T08:02:58.476Z"
+    },
+    {
+      "id": "96a4f7ec-d2af-4831-90a9-7346edc58264",
+      "business_id": "fa071488-8349-4288-a5d9-c732d9a8bccd",
+      "name": "Ananya gupta",
+      "phone": "+919999993221",
+      "email": "",
+      "notes": "",
+      "visit_count": 1,
+      "last_visit": "2026-05-11",
+      "created_at": "2026-05-09T08:04:22.607Z"
     }
   ],
   "staff": [],
-  "reminder_logs": []
+  "reminder_logs": [],
+  "workflows": [
+    {
+      "id": "40c88121-c744-48df-82c8-59c863cfe581",
+      "business_id": "fa071488-8349-4288-a5d9-c732d9a8bccd",
+      "name": "Basic Booking",
+      "template_id": "basic-booking",
+      "is_active": true,
+      "steps": [
+        {
+          "id": "step-0",
+          "type": "send_welcome",
+          "label": "Welcome Message",
+          "description": "Greet the customer",
+          "enabled": true,
+          "config": {}
+        },
+        {
+          "id": "step-1",
+          "type": "show_services",
+          "label": "Show Services",
+          "description": "Display available services as a numbered list",
+          "enabled": true,
+          "config": {}
+        },
+        {
+          "id": "step-2",
+          "type": "pick_service",
+          "label": "Pick Service",
+          "description": "Customer selects a service by number",
+          "enabled": true,
+          "config": {}
+        },
+        {
+          "id": "step-3",
+          "type": "pick_date",
+          "label": "Pick Date",
+          "description": "Customer selects from next 7 days",
+          "enabled": true,
+          "config": {
+            "days_ahead": 7
+          }
+        },
+        {
+          "id": "step-4",
+          "type": "pick_time",
+          "label": "Pick Time",
+          "description": "Customer selects from available slots",
+          "enabled": true,
+          "config": {
+            "slots": [
+              "9:00 AM",
+              "10:00 AM",
+              "11:00 AM",
+              "12:00 PM",
+              "2:00 PM",
+              "3:00 PM",
+              "4:00 PM",
+              "5:00 PM"
+            ]
+          }
+        },
+        {
+          "id": "step-5",
+          "type": "ask_name",
+          "label": "Ask Name",
+          "description": "Collect customer full name",
+          "enabled": true,
+          "config": {}
+        },
+        {
+          "id": "step-6",
+          "type": "confirm_details",
+          "label": "Confirm Details",
+          "description": "Show summary and ask YES to confirm",
+          "enabled": true,
+          "config": {}
+        },
+        {
+          "id": "step-7",
+          "type": "create_booking",
+          "label": "Create Booking",
+          "description": "Save appointment to database",
+          "enabled": true,
+          "config": {}
+        },
+        {
+          "id": "step-8",
+          "type": "send_confirmation",
+          "label": "Send Confirmation",
+          "description": "Send booking confirmation message",
+          "enabled": true,
+          "config": {}
+        }
+      ],
+      "bot_personality": {
+        "tone": "friendly",
+        "language": "english",
+        "greeting": "👋 Hi! Welcome to {businessName}. I'm your booking assistant.",
+        "farewell": "Thank you for booking with us! See you soon. 💚",
+        "special_notes": "",
+        "faq": [
+          {
+            "q": "What are your working hours?",
+            "a": "We are open 9 AM to 7 PM, Tuesday to Sunday. Monday closed."
+          },
+          {
+            "q": "Do you accept walk-ins?",
+            "a": "Yes, but appointments are preferred to avoid waiting."
+          },
+          {
+            "q": "Can I reschedule my appointment?",
+            "a": "Absolutely! Just reply RESCHEDULE and we will help you find a new slot."
+          }
+        ]
+      },
+      "created_at": "2026-05-09T08:00:45.206Z",
+      "updated_at": "2026-05-09T08:00:45.206Z"
+    },
+    {
+      "id": "92228597-a969-4ad5-ab33-cefa7ddf2f5c",
+      "business_id": "21185d60-d647-4c11-b88a-89bc33a05793",
+      "name": "Basic Booking",
+      "template_id": "basic-booking",
+      "is_active": true,
+      "steps": [
+        {
+          "type": "send_welcome",
+          "label": "Welcome Message",
+          "description": "Greet the customer",
+          "enabled": true,
+          "config": {},
+          "id": "step-0"
+        },
+        {
+          "type": "show_services",
+          "label": "Show Services",
+          "description": "Display available services as a numbered list",
+          "enabled": true,
+          "config": {},
+          "id": "step-1"
+        },
+        {
+          "type": "pick_service",
+          "label": "Pick Service",
+          "description": "Customer selects a service by number",
+          "enabled": true,
+          "config": {},
+          "id": "step-2"
+        },
+        {
+          "type": "pick_date",
+          "label": "Pick Date",
+          "description": "Customer selects from next 7 days",
+          "enabled": true,
+          "config": {
+            "days_ahead": 7
+          },
+          "id": "step-3"
+        },
+        {
+          "type": "pick_time",
+          "label": "Pick Time",
+          "description": "Customer selects from available slots",
+          "enabled": true,
+          "config": {
+            "slots": [
+              "9:00 AM",
+              "10:00 AM",
+              "11:00 AM",
+              "12:00 PM",
+              "2:00 PM",
+              "3:00 PM",
+              "4:00 PM",
+              "5:00 PM"
+            ]
+          },
+          "id": "step-4"
+        },
+        {
+          "type": "ask_name",
+          "label": "Ask Name",
+          "description": "Collect customer full name",
+          "enabled": true,
+          "config": {},
+          "id": "step-5"
+        },
+        {
+          "type": "confirm_details",
+          "label": "Confirm Details",
+          "description": "Show summary and ask YES to confirm",
+          "enabled": true,
+          "config": {},
+          "id": "step-6"
+        },
+        {
+          "type": "create_booking",
+          "label": "Create Booking",
+          "description": "Save appointment to database",
+          "enabled": true,
+          "config": {},
+          "id": "step-7"
+        },
+        {
+          "type": "send_confirmation",
+          "label": "Send Confirmation",
+          "description": "Send booking confirmation message",
+          "enabled": true,
+          "config": {},
+          "id": "step-8"
+        }
+      ],
+      "bot_personality": {
+        "tone": "friendly",
+        "language": "english",
+        "greeting": "👋 Hi! Welcome to {businessName}. I'm your booking assistant.",
+        "farewell": "Thank you for booking with us! See you soon. 💚",
+        "special_notes": "",
+        "faq": []
+      },
+      "created_at": "2026-05-09T11:35:12.066Z",
+      "updated_at": "2026-05-09T11:35:16.764Z"
+    }
+  ]
 }

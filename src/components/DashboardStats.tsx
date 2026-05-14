@@ -6,7 +6,7 @@ interface StatsProps {
   stats: {
     total_appointments_today: number;
     total_appointments_week: number;
-    total_patients: number;
+    total_customers: number;
     no_show_rate: number;
   };
 }
@@ -29,7 +29,7 @@ export default function DashboardStats({ stats }: StatsProps) {
     },
     {
       title: 'Total Customers',
-      value: stats.total_patients,
+      value: stats.total_customers,
       icon: Users,
       color: 'bg-purple-50 text-purple-600',
       hoverColor: 'hover:bg-purple-100',
